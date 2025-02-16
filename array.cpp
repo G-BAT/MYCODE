@@ -299,5 +299,109 @@ int main() {
     return 0;
 }
 -----------------------------------------------------------------------------------------
+SUBARRY
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+int main() {
+    int v[]={1,2,3,4,5};
+    int n=5;
+
+    for(int i=0; i<n; ++i){
+        for(int j=i; j<n; ++j){
+            for(int k=i; k<=j; ++k){
+                cout << v[k];
+            }
+            cout << " ";
+        }
+        cout << "\n";
+    }
+
+
+}
+
+------------------------------------------------------------------
+SUM OF SUBARRAYS
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+int main() {
+    int v[]={1,2,3,4,5};
+    int n=5;
+
+    for(int i=0; i<n; ++i){
+        int cs=0;
+        for(int j=i; j<n; ++j){
+            cs+=v[j];
+            cout << cs << " ";
+        }
+        cout << "\n";
+    }
+
+
+}
+
+-------------------------------------------------------------------
+
+SUM OF ALL SUBARRYS
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+int main() {
+    int v[]={1,2,3,4,5};
+    int n=5,sum=0;
+
+    for(int i=0; i<n; ++i){
+        int cs=0;
+        for(int j=i; j<n; ++j){
+            cs+=v[j];
+            sum+=cs;
+        }
+    }
+
+    cout << sum;
+
+}
+
+------------------------------------------------------------
+
+LARGEST SUM OF A SUBARRAY(KADANE'S ALGORITHM)
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+int main() {
+    
+    int a[]={1,-2,7,2,1,-2,5};
+    int size =sizeof(a)/sizeof(a[0]);
+    int maxx=INT_MIN;
+
+    for(int i=0; i<size; ++i){
+        int currentsum=0;
+        for(int j=i; j<size; ++j){
+            currentsum+=a[j];
+            maxx=max(currentsum,maxx);
+        }
+    }
+
+    cout << "maximum subarray sum is " << maxx;
+
+}
+------------------------------------------------------------------------
 
 */
