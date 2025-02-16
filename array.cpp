@@ -521,7 +521,7 @@ int main() {
 
     int v[]={1,1,2,2,2};
     int n=sizeof(v)/sizeof(v[0]);
-    int f=0,a=0;
+    int f=0,a=0,ff=0;
 
     for(int i=0; i<n; ++i){
         if(f==0){
@@ -534,7 +534,18 @@ int main() {
             --f;
         }
     }
-    cout << a;
+    for(int i=0; i<n; ++i){
+        if(a==v[i]){
+            ++ff;
+        }
+    }
+    if(ff>n/2){
+        cout << "majority element is:" << a;
+    }
+    else{
+        cout << "no majority element";
+    }
+    
 }
 -----------------------------------------------------------------------------
 
