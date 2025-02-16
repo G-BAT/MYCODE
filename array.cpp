@@ -458,4 +458,84 @@ int main() {
 }
 ------------------------------------------------------------------------
 
+MAJORITY ELEMENT-1
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+    int v[]={2,1,1,2,2};
+    int n=sizeof(v)/sizeof(v[0]);
+
+    for(int i:v){
+        int count=0;
+        for(int j:v){
+            if(i==j){
+                ++count;
+            }
+        }
+        if(count>n/2){
+            cout << i;
+            break;
+        }
+    }
+}
+-----------------------------------------------------------------
+
+MAJORITY ELEMENT-2
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+    int v[]={1,1,2,2,2};
+    int n=sizeof(v)/sizeof(v[0]);
+    int f=1,a=v[0];
+
+    for(int i=1; i<n; ++i){
+        if(v[i]==v[i-1]){
+            ++f;
+        }
+        else{
+            a=v[i];
+            f=1;
+        }
+        if(f>n/2){
+            cout << a;
+        }
+    }
+}
+----------------------------------------------------------
+
+MAJORITY ELEMENT-2(MOORRE'S ALGORITHM)
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+    int v[]={1,1,2,2,2};
+    int n=sizeof(v)/sizeof(v[0]);
+    int f=0,a=0;
+
+    for(int i=0; i<n; ++i){
+        if(f==0){
+            a=v[i];
+        }
+        if(a==v[i]){
+            ++f;
+        }
+        else{
+            --f;
+        }
+    }
+    cout << a;
+}
+-----------------------------------------------------------------------------
+
 */
