@@ -1,4 +1,7 @@
-/*#include <iostream>
+/*
+FINDING MAXIMUM AND MINIMUM IN AN ARRAY
+
+#include <iostream>
 using namespace std;
 
 void lol(int x[], int s){
@@ -92,26 +95,21 @@ void sort(int x[],int size){
             }
         
         }
-    }
-    for(int i=0; i<size; ++i){
-        cout <<x[i] << " ";
-    }
-    cout <<"\n";
-    
-    cout << x[0] << " ";
-    for (int i=1; i<size; ++i){
-        if(x[i]!=x[i-1]){
-            cout << x[i]<<" ";
-        }
-    }
+    }    
 }
 
 
 int main(){
-    int x[]={2,6,4,1,7,0,1,2,3,4};
+    int x[]={2,6,4,1,7,0,1,2,3,4,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8};
     int s=sizeof(x)/sizeof(x[0]);
     sort(x,s);
 
+    
+    for (int i=0; i<s; ++i){
+        if(x[i]!=x[i+1]){
+            cout << x[i] << " ";
+        }
+    }
 }
 ----------------------------------------------------------------------------
 INTERSECTION OF TWO ARRAY
