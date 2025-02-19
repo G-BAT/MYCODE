@@ -429,7 +429,7 @@ int main() {
 
 ------------------------------------------------------------
 
-LARGEST SUM OF A SUBARRAY(KADANE'S ALGORITHM)
+LARGEST SUM OF A SUBARRAY
 
 #include <iostream>
 #include <vector>
@@ -452,6 +452,27 @@ int main() {
     }
 
     cout << "maximum subarray sum is " << maxx;
+
+}
+------------------------------------------------------------------------
+LARGEST SUM OF A SUBARRAY(KADANE'S ALGORITHM)
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a[]={1,2,3,4,5};
+    int sum=0,maxx=INT_MIN;
+
+    for(int i=0; i<5; ++i){
+        sum+=a[i];
+        maxx=max(sum,maxx);
+        if(sum<0){
+            sum=0;
+        }
+    }
+
+    cout << sum;
 
 }
 ------------------------------------------------------------------------
